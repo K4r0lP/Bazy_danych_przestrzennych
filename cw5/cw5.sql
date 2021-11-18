@@ -27,27 +27,17 @@ update obiekty
 		where name = 'obiekt4';
 
 
-
-
-
-
-
-
-
-
 --3
 insert into obiekty(id,name,geometry) values(
-	8,
+	7,
 	'obiekt8',
 	--select St_Collect(a.geometry, b.geometry)
-	(select St_Collect(a.geometry, b.geometry) from obiekty a, obiekty b
+	(select St_Union(a.geometry, b.geometry) from obiekty a, obiekty b
 		where a.name = 'obiekt3' and b.name = 'obiekt4')
 	);
 
 select st_asText(geometry) from obiekty 
-where name = 'obiekt8' or  name = 'obiekt7'
-
-
+where name = 'obiekt7'
 
 
 --4
