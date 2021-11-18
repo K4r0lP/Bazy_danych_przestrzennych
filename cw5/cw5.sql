@@ -30,7 +30,7 @@ update obiekty
 --3
 insert into obiekty(id,name,geometry) values(
 	7,
-	'obiekt8',
+	'obiekt7',
 	--select St_Collect(a.geometry, b.geometry)
 	(select St_Union(a.geometry, b.geometry) from obiekty a, obiekty b
 		where a.name = 'obiekt3' and b.name = 'obiekt4')
